@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <title>Mean Warmup</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300italic' rel='stylesheet' type='text/css'>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular-route.js"></script>
+  <script type="text/javascript" src="/js/app.js"></script>
+  <script type="text/javascript" src="/js/controllers/homeController.js"></script>
+  <script type="text/javascript" src="/js/scripts/weather.js"></script>
+  <script type="text/javascript" src="/js/scripts/travel.js"></script>
+  <script type="text/javascript" src="/js/scripts/301.js"></script>
+  <link rel="stylesheet" type="text/css" href="/css/custom.css">
+  <link rel="stylesheet" type="text/css" href="/css/weather-icons.css">
+  <script src="https://use.fontawesome.com/ad891a8ac1.js"></script>
+<body>
+  <!-- Navbar -->
+<nav class="navbar navbar-default navbar-static-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#/">Home</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="#301">301</a></li>
+        <li><a href="#travel">Travel Calculator</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- Main Body -->
+  
+  <div ng-view>
+   <!-- Partials Rendered Here -->
+  </div>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; Mike Cammarato 2016</p>
+</footer>
+</body>
+</html>
