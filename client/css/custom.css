@@ -13,11 +13,17 @@
   font-weight: 50;
 }
 
+a, u {
+    text-decoration: none !important;
+}
+
 /* Default */
   .navbar-default
   {
     background-color: #1976D2;
     border-radius: 0 !important;
+    border: 0;
+
   }
 /* Brand */
   .navbar .navbar-brand
@@ -97,14 +103,64 @@
     font-size:50px;
   }
 
+
+#sidebar
+{
+  background-color: #3a3a3a;
+  position: fixed;
+  left: 0;
+  height: 500px;
+  width: 90px;
+  padding-bottom: 50px;
+
+}
+
+.navigation
+{
+  color:white;
+  list-style: none;
+  text-align: left;
+  padding: 0;
+}
+
+.navigation > a.active
+{
+   margin: 0 0 10px 0;
+}
+
+
+.navigation > li
+{
+   margin:0 0 10px 0;
+}
+
+.navigation > a:hover
+{
+   background-color: black;
+}
+
+.navigation > li > a:hover
+{
+   background-color: black;
+}
+
+#main-content
+{
+  /*Find better way to push content over*/
+  margin-left: 120px;
+  min-height: 100px;
+
+}
+
 footer
 {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   height: 60px;
   width: 100%;
-  background-color: #1976D2;
+  background-color: #252525;
   color: white; 
+ /* z-index: 2000;*/
 }
 
 #footerText

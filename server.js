@@ -1,8 +1,12 @@
-var express = require('express');
-var app = express();
-var mongoose = require('mongoose');
+var express     = require('express'),
+    app         = express(),
+    bodyParser  = require('body-parser'),
+    mongoose    = require('mongoose'),
+    Book        = require('./Book.model');
 
-mongoose.connect('mongodb://localhost:27017/mean-warmup');
+mongoose.connect('mongodb://localhost:27017/caldwellMeetups');
+
+app.use(bodyParser());
 
 app.use(express.static('client/partials'));
 
@@ -14,10 +18,6 @@ app.use('/font', express.static(__dirname + '/client/font'));
 app.get('/', function(req, res) {
   res.sendFile(__dirname + '/client/views/index.html');
 });
-
-// app.get('/main', function(req, res) {
-//   res.sendFile(__dirname + '/client/partials/main.html');
-// });
 
 app.listen(3000, function() {
   console.log('I\'m Listening');
