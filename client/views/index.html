@@ -15,41 +15,59 @@
   <script type="text/javascript" src="/js/scripts/travel.js"></script>
   <script type="text/javascript" src="/js/scripts/301.js"></script>
   <link rel="stylesheet" type="text/css" href="/css/custom.css">
+  <!-- <link rel="stylesheet" type="text/css" href="/css/reset.css"> -->
   <link rel="stylesheet" type="text/css" href="/css/weather-icons.css">
   <script src="https://use.fontawesome.com/ad891a8ac1.js"></script>
 <body>
+
   <!-- Navbar -->
-<nav class="navbar navbar-default navbar-static-top">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#/">Home</a>
+  
+<header class="primary" role="banner">
+  <section class="top-nav">
+    <div class="wrap">
+      <div class="logo">
+        <a href="#/"><img style="height: 48px; width:48px;" src="/img/testlogo.png"></a>
       </div>
-      <ul class="nav navbar-nav">
-        <li><a href="#301">301</a></li>
-        <li><a href="#travel">Travel Calculator</a></li>
-      </ul>
+      <div class="user-nav">
+        <nav id="user-nav">
+          <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+          </ul>
+        </nav>
+      </div>
     </div>
-  </nav>
+  </section>
+  <section class="middle-nav">
+    <div class="wrap">
+      <nav id="main-nav" role="navigation">
+        <ul id="menu-main-menu">
+          <li id="menu-item-1"><a href="#301"></a>301 Calc</li>
+          <li id="menu-item-2"><a href="#travel"></a>Travel Calc</li>
+          <li id="menu-item-2"><a href="#dash"></a>Home</li>
+        </ul>
+      </nav>
+      <div class="search">
+        <form id="search-form">
+          <input id="i1" placeholder="search">
+          <button class="btn btn-custom" type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</header>
+
   <!-- Main Body -->
 
-
-  <!-- Sidebar -->
-  <div id="sidebar">
-   <ul id="navigation">
-     <li><a href="#/">Home</a></li>
-     <li><a href="#301">301</a></li>
-     <li><a href="#travel">Travel</a></li>
-   </ul>
-  </div>
-
-  <div id="main-content" class="container-fluid">
+  <section id="main-content" class="container-fluid">
     <div ng-view>
       <!-- Partials Rendered Here -->
     </div>
-  </div>
-
+  </section> 
 
 <!-- Footer -->
+
 <footer>
   <p id="footerText">&copy; Mike Cammarato 2016</p>
 </footer>
