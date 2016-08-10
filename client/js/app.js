@@ -16,4 +16,9 @@ app.config(function($routeProvider) {
     .when('/travel', {
       templateUrl: '/travel.html'
     })
+
+  $routeProvider
+    .when('/form', {
+      templateUrl: '/form.html'
+    })
 });

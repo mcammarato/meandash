@@ -10,12 +10,14 @@
   <script type="text/javascript" src="/angular-route/angular-route.js"></script>
   <script type="text/javascript" src="/js/app.js"></script>
   <script type="text/javascript" src="/js/controllers/homeController.js"></script>
+  <script type="text/javascript" src="/js/controllers/validationController.js"></script>
   <!-- <script type="text/javascript" src="/js/scripts/weather.js"></script> -->
   <script type="text/javascript" src="/js/scripts/travel.js"></script>
   <script type="text/javascript" src="/js/scripts/301.js"></script>
   <script type="text/javascript" src="/js/scripts/pocket.py"></script>
   <script type="text/javascript" src="/js/scripts/pockettest.js"></script>
   <link rel="stylesheet" type="text/css" href="/css/custom.css">
+  <link rel="stylesheet" type="text/css" href="/hovercss/hover.css">
   <!-- <link rel="stylesheet" type="text/css" href="/css/reset.css"> -->
   <link rel="stylesheet" type="text/css" href="/css/weather-icons.css">
   <script src="https://use.fontawesome.com/ad891a8ac1.js"></script>
@@ -42,12 +44,12 @@
     </div>
   </section>
   <section class="middle-nav">
-    <div class="wrap">
-      <nav id="main-nav" role="navigation">
-        <ul id="menu-main-menu">
-          <li><a href="#301"></a>301 Calc</li>
-          <li id="menu-item-2"><a href="#travel"></a>Travel Calc</li>
-          <li id="menu-item-2"><a href="#dash"></a>Home</li>
+    <div style="border: 1px solid pink" class="wrap">
+      <nav style="border: 1px solid red" id="main-nav" role="navigation">
+        <ul style="border: 1px solid black" id="main-menu">
+          <li style="border: 1px solid yellow" class="hvr-underline-reveal"><a href="#301">301 Calc</a></li>
+          <li><a href="#travel">Travel Calc</a></li>
+          <li><a href="#form">Form</a></li>
         </ul>
       </nav>
       <div class="search">

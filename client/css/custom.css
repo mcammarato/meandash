@@ -26,7 +26,7 @@ body
 
 .top-nav
 {
-  background-color: #303F9F;
+  background-color: #3F51B5;
   height: 55px;
 }
 
@@ -59,8 +59,8 @@ body
 
 .middle-nav
 {
-  height: 50px;
-  background-color: #3F51B5;
+  height: 55px;
+  background-color: #303F9F;
 }
 
 #main-nav
@@ -73,17 +73,39 @@ body
   display: inline-block;
 }
 
-#menu-main-menu
+#main-menu
 {
   display: block;
   margin-top: 15px;
   color: white;
 }
 
-#menu-main-menu > li
+#main-menu > li
 {
   padding: 0 10px 0 0;
   display: block;
+
+}
+
+
+#main-menu > li > a:hover
+{
+  color: white;
+}
+
+#main-menu > li > a:visited
+{
+  color: white;
+}
+
+#main-menu > li > a:active
+{
+  color: white;
+}
+
+#main-menu > li > a:link
+{
+  color: white;
 }
 
 .search
@@ -119,11 +141,11 @@ body
   
   .w3-card-4 .w3-blue
   {
-    background-color: #2196F3 !important;
+    background-color: #0059b4 !important;
   }
   .w3-card-4 .w3-blue:hover
   {
-    background-color: #0059b4 !important;
+    background-color: #9B26AF !important;
   }
 
   /* Weather Icons */
@@ -143,6 +165,14 @@ body
   min-height: 100px;
   padding-top: 20px;
 
+}
+
+/* Signup Page */
+
+.container-signup
+{
+  max-width: 600px;
+  
 }
 
 /* Footer */
