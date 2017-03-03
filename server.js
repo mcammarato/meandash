@@ -1,13 +1,11 @@
-var express     = require('express'),
-    app         = express(),
-    http        = require('http').Server(app),
-    bodyParser  = require('body-parser'),
-    mongoose    = require('mongoose'),
-    User        = require('./server/models/User.model'),
-    PythonShell = require('python-shell'),
-    spawn       = require('child_process').spawn;
+var express         = require('express'),
+    app             = express(),
+    bodyParser      = require('body-parser'),
+    mongoose        = require('mongoose'),
+    User            = require('./server/models/User.model');
+    
 
-
+// Connect to DB 
 mongoose.connect('mongodb://localhost:27017/meandash');
 
 // Body Parser
@@ -17,6 +15,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
+// Partials
 app.use(express.static('client/partials'));
 
 // Node Modules
@@ -25,9 +24,11 @@ app.use('/bootstrap', express.static(__dirname + '/node_modules/bootstrap/dist/c
 app.use('/open-sans', express.static(__dirname + '/node_modules/npm-font-open-sans/'));
 app.use('/angular', express.static(__dirname + '/node_modules/angular/'));
 app.use('/angular-route', express.static(__dirname + '/node_modules/angular-route/'));
+app.use('/angular-resource', express.static(__dirname + '/node_modules/angular-resource/'));
+app.use('/jquery-validation', express.static(__dirname + '/node_modules/jquery-validation/dist/'));
 app.use('/hovercss', express.static(__dirname + '/node_modules/hover.css/css'));
 
-// Middleware to shorten paths
+// Shorten Paths
 app.use('/js', express.static(__dirname + '/client/js'));
 app.use('/css', express.static(__dirname + '/client/css'));
 app.use('/img', express.static(__dirname + '/client/img'));
@@ -38,8 +39,10 @@ app.get('/', function(req, res) {
   res.sendFile(__dirname + '/client/views/index.html');
 });
 
+// REST API //
+
 // Get all users
-app.get('/users', function(req, res) {
+app.get('/api/users', function(req, res) {
   console.log('Getting all users');
   User.find({})
   .exec(function(err, results) {
@@ -56,7 +59,7 @@ app.get('/users', function(req, res) {
 });
 
 // Get specific user
-app.get('/users/:id', function(req,res) {
+app.get('/api/users/:id', function(req,res) {
   console.log('getting one book');
   User.findOne({
     _id: req.params.id
@@ -68,7 +71,7 @@ app.get('/users/:id', function(req,res) {
     }
     else
     {
-      console.log(User);
+      console.log('Users loaded sucessfully');
       res.json(User);
     }
   })
@@ -76,7 +79,7 @@ app.get('/users/:id', function(req,res) {
 
 // Add a new user 
 
-app.post('/users', function(req, res) {
+app.post('/api/users', function(req, res) {
   var newUser = new User();
 
   newUser.name = req.body.name;
@@ -90,19 +93,21 @@ app.post('/users', function(req, res) {
     }
     else
     {
-      console.log(user);
+      console.log('User created sucessfully!');
       res.send(user);
     }
   })
 })
+
 // Update User
-app.put('/users/:id', function(req, res) {
+app.put('/api/users/:id', function(req, res) {
   User.findOneAndUpdate({
     _id: req.params.id
     },
     { $set: { name: req.body.name }
   }, {upsert: true}, function(err, newUser) {
-    if (err) {
+    if (err) 
+    {
       res.send('error updating ');
     } else {
       console.log(newUser);
@@ -112,7 +117,7 @@ app.put('/users/:id', function(req, res) {
 });
 
 // Delete User
-app.delete('/users/:id', function(req, res) {
+app.delete('/api/users/:id', function(req, res) {
   User.findOneAndRemove({
     _id: req.params.id
   }, function(err, book) {
@@ -128,8 +133,4 @@ app.delete('/users/:id', function(req, res) {
 // Node Server
 app.listen(3000, function() {
   console.log('I\'m Listening');
-});
-
-http.listen(3001, function(){
-  console.log('Python listening on *:3000');
 });

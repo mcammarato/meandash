@@ -3,64 +3,40 @@
 <head>
   <title>Mean Dash</title>
   <script type="text/javascript" src="/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/jquery-validation/jquery.validate.js"></script>
+  <script type="text/javascript" src="/js/scripts/userForm.js"></script>
   <link rel="stylesheet" type="text/css" href="/bootstrap/bootstrap.min.css">
   <link rel="stylesheet" href="/open-sans/open-sans.css" type="text/css" />
   <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
   <script type="text/javascript" src="/angular/angular.js"></script>
   <script type="text/javascript" src="/angular-route/angular-route.js"></script>
+  <script type="text/javascript" src="/angular-resource/angular-resource.js"></script>
   <script type="text/javascript" src="/js/app.js"></script>
-  <script type="text/javascript" src="/js/controllers/homeController.js"></script>
-  <script type="text/javascript" src="/js/controllers/validationController.js"></script>
-  <!-- <script type="text/javascript" src="/js/scripts/weather.js"></script> -->
-  <script type="text/javascript" src="/js/scripts/travel.js"></script>
+  <script type="text/javascript" src="/js/controllers/users-controller.js"></script>
+  <script type="text/javascript" src="/js/scripts/weather.js"></script>
+  <script type="text/javascript" src="/js/scripts/301Validation.js"></script>
   <script type="text/javascript" src="/js/scripts/301.js"></script>
-  <script type="text/javascript" src="/js/scripts/pocket.py"></script>
-  <script type="text/javascript" src="/js/scripts/pockettest.js"></script>
   <link rel="stylesheet" type="text/css" href="/css/custom.css">
   <link rel="stylesheet" type="text/css" href="/hovercss/hover.css">
-  <!-- <link rel="stylesheet" type="text/css" href="/css/reset.css"> -->
   <link rel="stylesheet" type="text/css" href="/css/weather-icons.css">
   <script src="https://use.fontawesome.com/ad891a8ac1.js"></script>
+  <script type="text/javascript" src="/js/scripts/pocket.js"></script>
 </head>
 <body>
 
   <!-- Navbar -->
 
-<header class="primary" role="banner">
-  <section class="top-nav">
-    <div class="wrap">
-      <div class="logo">
-        <a href="#/"><img style="height: 48px; width:48px;" src="/img/testlogo.png"></a>
-      </div>
-      <div class="user-nav">
-        <nav id="user-nav">
-          <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Contact</li>
-          </ul>
-        </nav>
-      </div>
+  <header>
+    <div class="nav-wrap">
+      <ul class="nav-links">
+        <li><a href="#/">Home</a></li>
+        <li><a href="#signup">Signup</a></li>
+        <li><a href="#card">Card</a></li>
+        <li><a href="#form">form</a></li>
+        <li><a href="#301">301</a></li>
+      </ul>
     </div>
-  </section>
-  <section class="middle-nav">
-    <div style="border: 1px solid pink" class="wrap">
-      <nav style="border: 1px solid red" id="main-nav" role="navigation">
-        <ul style="border: 1px solid black" id="main-menu">
-          <li style="border: 1px solid yellow" class="hvr-underline-reveal"><a href="#301">301 Calc</a></li>
-          <li><a href="#travel">Travel Calc</a></li>
-          <li><a href="#form">Form</a></li>
-        </ul>
-      </nav>
-      <div class="search">
-        <form id="search-form">
-          <input id="i1" placeholder="search">
-          <button class="btn btn-custom" type="submit">Submit</button>
-        </form>
-      </div>
-    </div>
-  </section>
-</header>
+  </header>
 
   <!-- Main Body -->
 
@@ -68,12 +44,7 @@
     <div ng-view>
       <!-- Partials Rendered Here -->
     </div>
-  </section> 
-
-<!-- Footer -->
-
-<footer>
-  <p id="footerText">&copy; Mike Cammarato 2016</p>
-</footer>
+  </section>
 </body>
+<script type="text/javascript" src="/js/scripts/scripts.js"></script>
 </html>

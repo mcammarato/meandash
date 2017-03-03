@@ -1,16 +1,149 @@
-<div class="col-md-4">
-    <h2>301</h2>
+<!-- Player 1 -->
+<div class="col-md-6" id="playeroneContainer">
+  <form id="301formLeft">
+    <div id="enterinfoLeft">
+      <h4>Enter Player 1</h4>
+      <input name="nameOne" id="nameOne"></input>
+      <br>
+      <br>
+      <button class="btn btn-primary" type="button" onclick="nameFunctionLeft()">Play</button>
+    </div>
+    <h3 id="playerOne"></h3>
     <hr>
-    <form>
-      <p>Enter your first throw</p>
-      <input ng-model="t1" type="number" id="t1"></input>
-      <p>Enter your second throw</p>
-      <input ng-model="t2" type="number" id="t2"></input>
-      <p>Enter your third throw</p>
-      <input ng-model="t3" type="number" id="t3"></input>
-    </form>
+    <p>Enter your first throw</p>
+    <input type="number" name="p1firstThrow" id="p1firstThrow">
+    <p>Enter your second throw</p>
+    <input type="number" name="p1secondThrow" id="p1secondThrow">
+    <p>Enter your third throw</p>
+    <input type="number" name="p1thirdThrow" id="p1thirdThrow">
     <br>
-    <button class="btn btn-primary" onclick="threeZeroOne()">Submit</button>
     <br>
-    <p id="total"></p>
+    <button type="submit" class="btn btn-primary playerSubmit" onclick="threeZeroOneCalc()">Submit</button>
+  </form>
+  <hr>
+  <!-- results -->
+  <h4>Your Score is:</h4>
+  <hr>
+  <h3 id="score"></h3>
+  <!-- If Bust -->
+  <div id="bust" class="alert alert-danger">
+    <strong></strong>
   </div>
+  <!-- If Win -->
+  <div id="win" class="alert alert-success">
+    <strong></strong>
+  </div>
+</div>
+</div>
+<!-- Player 2 -->
+<div class="col-md-6" id="playertwoContainer">
+  <form id="301formRight">
+    <div id="enterinfoRight">
+      <h4>Enter Player 2</h4>
+      <input type="text" name="nameTwo" id="nameTwo"></input>
+      <br>
+      <br>
+      <button class="btn btn-primary" type="button" onclick="nameFunctionRight()">Play</button>
+    </div>
+    <h3 id="playerTwo"></h3>
+    <hr>
+    <p>Enter your first throw</p>
+    <input type="number" name="p2firstThrow" id="p2firstThrow">
+    <p>Enter your second throw</p>
+    <input type="number" name="p2secondThrow" id="p2secondThrow">
+    <p>Enter your third throw</p>
+    <input type="number" name="p2thirdThrow" id="p2thirdThrow">
+    <br>
+    <br>
+    <button type="submit" class="btn btn-primary" onclick="threeZeroOneCalcRight()">Submit</button>
+  </form>
+  <hr>
+  <!-- results -->
+  <h4>Your Score is:</h4>
+  <hr>
+  <h3 id="scoreRight"></h3>
+  <!-- If Bust -->
+  <div id="bustRight" class="alert alert-danger">
+    <strong></strong>
+  </div>
+  <!-- If Win -->
+  <div id="winRight" class="alert alert-success">
+    <strong></strong>
+  </div>
+</div>
+</div>
+<hr>
+</div>
+<script type="text/javascript">
+// Hide game alerts
+$('#bust').hide();
+$('#bustRight').hide();
+$('#win').hide();
+$('#winRight').hide();
+
+// Figure out why client side validation does not work in external js file
+
+$('#301formLeft').validate({
+    rules: {
+      nameOne: {
+        required  : true,
+        minlength : 1,
+        maxlength : 15
+      },
+      p1firstThrow: {
+        required  : true,
+        min : 1,
+        max : 60
+      },
+      p1secondThrow: {
+        required  : true,
+        min : 1,
+        max : 60
+      },
+      p1thirdThrow: {
+        required  : true,
+        min : 1,
+        max : 60
+      }
+    },
+    messages: {
+      nameOne         : "please enter a valid name",
+      p1firstThrow    : "please enter a number between 1 and 60",
+      p1secondThrow   : "please enter a number between 1 and 60",
+      p1thirdThrow    : "please enter a number between 1 and 60",
+    }
+  });
+
+// Validate Player 2 Form
+
+$('#301formRight').validate({
+    rules: {
+      nameTwo: {
+        required  : true,
+        minlength : 1,
+        maxlength : 60
+      },
+      p2firstThrow: {
+        required  : true,
+        min : 1,
+        max : 60
+      },
+      p2secondThrow: {
+        required  : true,
+        min : 1,
+        max : 60
+      },
+      p2thirdThrow: {
+        required  : true,
+        min : 1,
+        max : 60
+      }
+    },
+    messages: {
+      nameTwo         : "please enter a valid name",
+      p2firstThrow    : "please enter a number between 1 and 60",
+      p2secondThrow   : "please enter a number between 1 and 60",
+      p2thirdThrow    : "please enter a number between 1 and 60",
+    }
+  });
+</script>

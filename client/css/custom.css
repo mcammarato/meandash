@@ -15,6 +15,31 @@ body
  background-color: #F7F7F7 !important;
 }
 
+.nav-wrap {
+  background-color: #3F51B5;
+}
+
+.nav-links ul li {
+  display: inline-block;
+  list-style-type: none;
+}
+
+.nav-links li {
+  list-style-type: none;
+  display: inline-block;
+}
+
+.nav-links li a {
+  color: #fff;
+  display: block;
+  padding: 20px;
+}
+
+.nav-links li a:hover {
+  background-color: #fff;
+  color: #000;
+}
+
 /* Top Nav */
 
 .logo
@@ -32,13 +57,13 @@ body
 
 #user-nav
 {
-  
-  display: inline-block;  
+
+  display: inline-block;
 }
 
-#user-nav > li
+#user-nav li
 {
-    
+
 }
 
 .user-nav
@@ -49,13 +74,13 @@ body
   color: white;
 }
 
-.user-nav ul > li
+.user-nav ul li
 {
   display: inline-block;
   padding: 0 10px 0 0;
 }
 
-/* Middle Nav */ 
+/* Middle Nav */
 
 .middle-nav
 {
@@ -108,14 +133,6 @@ body
   color: white;
 }
 
-.search
-{
-  -webkit-appearance: textfield;
-  float:right;
-  margin-top: 14px;
-  border-radius: 20px;
-}
-
 .btn-custom
 {
   background-color: #51b53f;
@@ -138,7 +155,7 @@ body
     width: 300px;
     margin-left: 30px;
   }
-  
+
   .w3-card-4 .w3-blue
   {
     background-color: #0059b4 !important;
@@ -172,8 +189,20 @@ body
 .container-signup
 {
   max-width: 600px;
-  
+
 }
+
+/* form 1 */
+
+.container-form
+{
+  max-width: 350px;
+}
+
+/* jQuery Validate */
+label.error {
+    color: red;
+  }
 
 /* Footer */
 
@@ -184,9 +213,23 @@ footer
   height: 60px;
   width: 100%;
   background-color: #3a3a3a;
-  color: white; 
+  color: white;
  /* z-index: 2000;*/
 }
+
+/* 301 */
+
+#playeroneContainer
+{
+  max-width: 300px;
+}
+
+#playertwoContainer
+{
+  max-width: 300px;
+}
+
+/* Footer */
 
 #footerText
 {

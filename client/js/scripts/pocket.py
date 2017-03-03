@@ -2,6 +2,22 @@ import json, requests, pprint
 
 url = 'https://getpocket.com/v3/get'
 
+params = dict(
+    consumer_key = '54288-1cbff625e4ad6f2ff32f144d',
+	access_token = '9636d93f-f2f2-dfdd-2238-8ab3ae'
+)
+
+data = requests.get(url=url, params=params)
+
+results = data.content
+
+print(results)
+
+'''
+import json, requests, pprint
+
+url = 'https://getpocket.com/v3/get'
+
 
 params = dict(
     resolved_title = 'resolved_title',
@@ -18,3 +34,4 @@ output = json.loads(binary)
 
 # output all of the results
 pprint.pprint(output)
+'''

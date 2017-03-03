@@ -1,4 +1,4 @@
-var app = angular.module('myApp', ['ngRoute']);
+var app = angular.module('myApp', ['ngRoute', 'ngResource']);
 
 app.config(function($routeProvider) {
   //Setup Routes
@@ -21,4 +21,9 @@ app.config(function($routeProvider) {
     .when('/form', {
       templateUrl: '/form.html'
     })
+
+  $routeProvider
+    .when('/form1', {
+      templateUrl: '/form1.html'
+    }) 
 });
